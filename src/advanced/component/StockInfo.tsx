@@ -1,6 +1,7 @@
 import React from 'react';
+import { IProductList } from '../models/Product';
 
-function StockInfo({ products }) {
+function StockInfo({ products }: { products: IProductList[] }) {
   const lowStockProducts = products.filter((item) => item.stock < 5);
 
   return (

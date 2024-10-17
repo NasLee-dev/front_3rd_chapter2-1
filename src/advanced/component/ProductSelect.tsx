@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
+import { IProductList } from '../models/Product';
 
-function ProductSelect({ products, onAddToCart }) {
+function ProductSelect({ products, onAddToCart }: { products: IProductList[]; onAddToCart: (productId: string) => void }) {
   const [selectedProduct, setSelectedProduct] = useState('');
 
   const handleAddToCart = () => {

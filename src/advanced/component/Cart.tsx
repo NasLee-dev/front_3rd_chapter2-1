@@ -1,6 +1,21 @@
 import React from "react"
+import { IProductList } from "../models/Product"
 
-function Cart({ items, updateItem, removeItem, total, discountRate, bonusPoints }) {
+
+interface IItems extends IProductList {
+  quantity: number
+}
+
+interface ICartItem {
+  items: IItems[]
+  updateItem: (id: string, change: number) => void
+  removeItem: (id: string) => void
+  total: number
+  discountRate: number
+  bonusPoints: number
+}
+
+function Cart({ items, updateItem, removeItem, total, discountRate, bonusPoints }: ICartItem) {
   return (
     <div>
       {items.map((item) => (
